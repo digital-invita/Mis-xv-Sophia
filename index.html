@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Mis XV Estrella Elianeth </title>
+<title>Mis XV Sophia </title>
 
-<meta property="og:title" content="Mis XV Estrella Elianeth ">
+<meta property="og:title" content="Mis XV Sophia">
 <meta property="og:description" content="Acompáñame a celebrar este día tan especial">
-<meta property="og:image" content="https://mis-xv-estrella-elianeth.digitalinvita.com.mx/portada-og.jpg">
-<meta property="og:url" content="https://mis-xv-estrella-elianeth.digitalinvita.com.mx/">
+<meta property="og:image" content="https://mis-xv-sophia.digitalinvita.com.mx/portada-og.jpg">
+<meta property="og:url" content="https://mis-xv-sophia.digitalinvita.com.mx/">
 <meta property="og:type" content="website">
 
   
@@ -24,14 +24,14 @@
 :root {
 
   /* Fondo */
- --bg-color: linear-gradient(135deg, #2b0000, #5a0a0a, #8b1e1e, #2b0000);
+ --bg-color: linear-gradient(135deg, #050f1f, #0b2545, #13315c, #050f1f);
   --bg-image: none;
 
   /* Colores principales */
 --color-title: #ffffff;
---color-text: #ffffff;
---color-light: #ffffff;
---color-accent: #fde68a; 
+--color-text: #e2e8f0;
+--color-light: #94a3b8;
+--color-accent: #facc15; 
 
  /* Colores publicidad */
 --marca-color: #ffffff;
@@ -39,24 +39,23 @@
   /* DIGITAL INVITA */
 --gold-text: linear-gradient(
   120deg,
-  #3a0000 0%,
-  #7a0c0c 15%,
-  #ff3b3b 30%,
-  #a11212 45%,
-  #ff6a6a 55%,
-  #7a0c0c 70%,
-  #2b0000 100%
+  #3b2f0b 0%,
+  #8c6a1b 20%,
+  #facc15 40%,
+  #fff3b0 50%,
+  #facc15 60%,
+  #8c6a1b 80%,
+  #2a2108 100%
 );
-  
   --gold-btn: linear-gradient(135deg,#fff1a8 0%,#f6d365 25%,#d4af37 50%,#f6d365 75%,#fff1a8 100%);
 
 
  /* CONTADOR */
---count-number-color: #ffd166;  
---count-label-color: #fabb28;    
---count-shadow: 0 6px 16px rgba(0,0,0,.22);
---count-box-bg: rgba(255,255,255,0.20); 
---count-box-border: rgba(10,42,138,.35); 
+--count-number-color: #facc15;  
+--count-label-color: #e2e8f0;    
+--count-shadow: 0 8px 20px rgba(0,0,0,.35);
+--count-box-bg: rgba(255,255,255,0.08); 
+--count-box-border: rgba(250,204,21,.25);
 
 
 }
@@ -1871,8 +1870,8 @@ video{
   <div class="hero-content">
 <div class="mis-xv">Mis XV</div>
 
-<div class="nombre" id="nombre" data-text="Estrella Elianeth ">
-Estrella Elianeth 
+<div class="nombre" id="nombre" data-text="Sophia">
+Sophia 
 </div>
 
 <div class="fecha-xv" id="fechaEvento"></div>
@@ -2403,8 +2402,8 @@ toTopBtn.addEventListener('click', () => {
 // ================================
 
 // ⚠️ CAMBIA ESTA FECHA
-const EVENT_DATE = new Date("2026-06-06T14:00:00-06:00"); // YYYY-MM-DDTHH:MM INICIO
-const EVENT_END = "2026-06-06T23:59:59"; // fin
+const EVENT_DATE = new Date("2026-09-19T19:00:00-06:00"); // YYYY-MM-DDTHH:MM INICIO
+const EVENT_END = "2026-09-19T23:59:59"; // fin
 const fechaTexto = document.getElementById("fechaEvento");
 
 if (fechaTexto) {
@@ -2486,9 +2485,9 @@ function scrollToCountdown() {
 
 function addToCalendar() {
 
-  const titulo = "XV años Estrella Elianeth";
+  const titulo = "XV años Sophia";
   const detalles = "Acompáñanos a celebrar este día tan especial";
-  const lugar = "Pendiente";
+  const lugar = "Salón lexxus";
 
   const startDate = EVENT_DATE;
   const endDate = new Date(EVENT_END); 
@@ -2576,7 +2575,7 @@ actualizarOpciones();
 
     message = `✨ Confirmación de asistencia ✨
 
-Con mucha alegría confirmo mi presencia en los XV años de Estrella Elianeth.
+Con mucha alegría confirmo mi presencia en los XV años de Sophia.
 
 Nombre: ${name}
 ${count}
@@ -2585,7 +2584,7 @@ Será un honor acompañarte en este día tan especial 💖`;
 
   } else {
 
-    message = `✨ XV años Estrella Elianeth  ✨
+    message = `✨ XV años Sophia ✨
 
 Hola, mi nombre es ${name}.
 
@@ -2594,7 +2593,7 @@ pero te deseo un día maravilloso y lleno de felicidad 💐`;
 
   }
 
-  const phone = "527222523797";
+  const phone = "523310129284";
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
   window.open(url, "_blank");
