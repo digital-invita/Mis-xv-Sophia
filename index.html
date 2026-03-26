@@ -205,11 +205,16 @@ font-family: 'Playfair Display', serif;
     0 2px 8px rgba(0,0,0,.35),
     0 12px 40px rgba(0,0,0,.45);
 
-  opacity: 0;
-  transform: translateY(80px) scale(.75);
-  filter: blur(14px);
+  opacity: 0.01;
+  transform: translateY(80px) scale(.75) translateZ(0);
+  filter: blur(10px);
   will-change: transform, opacity, filter;
   white-space: nowrap;
+
+  backface-visibility: hidden;
+  transform: translateZ(0);
+
+  
 }
 
 
@@ -217,7 +222,7 @@ font-family: 'Playfair Display', serif;
 @keyframes nombreLuxuryReveal {
 
   0% {
-    opacity: 0;
+    opacity: 0.01;
     transform: translateY(80px) scale(.75);
     filter: blur(14px);
     letter-spacing: 8px;
