@@ -2804,8 +2804,6 @@ const timelineObserver = new IntersectionObserver((entries) => {
 
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
     }
 
   });
@@ -2815,7 +2813,6 @@ const timelineObserver = new IntersectionObserver((entries) => {
 });
 
 timelineItems.forEach(item => timelineObserver.observe(item));
-
 </script>
 </div>
 </body>
