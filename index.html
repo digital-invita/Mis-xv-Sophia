@@ -1835,6 +1835,52 @@ video{
   transform: translateY(-1px) scale(1.03);
 }
 
+.countdown-hero {
+  margin-top: 16px;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  font-family: 'Cormorant Garamond', serif;
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.35),
+    0 10px 25px rgba(0,0,0,.25);
+}
+
+/* cada bloque */
+.countdown-hero .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* números */
+.countdown-hero .num {
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: 2px;
+}
+
+/* texto (DÍAS, HORAS...) */
+.countdown-hero .label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+
+.countdown-hero::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
   
 </style>
 </head>
@@ -1869,21 +1915,23 @@ video{
 
 <section class="hero">
   <img src="FPrincipal.jpg">
- <div class="hero-overlay"></div>
+  <div class="hero-overlay"></div>
   
   <div class="hero-content">
-<div class="mis-xv">Mis XV</div>
+    
+    <div class="mis-xv">Mis XV</div>
 
-<div class="nombre" id="nombre" data-text="Sophia">
-Sophia 
-</div>
+    <div class="nombre" id="nombre" data-text="Sophia">
+      Sophia 
+    </div>
 
-<div class="fecha-xv" id="fechaEvento"></div>
+    <div class="fecha-xv" id="fechaEvento"></div>
 
+   
+   <div id="countdown" class="countdown-hero"></div>
 
   </div>
 </section>
-
 
   
 <div class="sep"></div>
