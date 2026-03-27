@@ -204,7 +204,10 @@ font-family: 'Playfair Display', serif;
 .bg-fixed {
   position: fixed;
   inset: 0;
-  background: url("fondo.png") center / cover no-repeat;
+
+  background: url("fondo.png") center / contain no-repeat;
+  background-color: #050f1f;
+
   z-index: 0;
 }
 
@@ -214,8 +217,8 @@ font-family: 'Playfair Display', serif;
   inset: 0;
 
   background: linear-gradient(
-    rgba(5,15,31,0.6),
-    rgba(5,15,31,0.7)
+    rgba(5,15,31,0.25),
+    rgba(5,15,31,0.35)
   );
 }
   
