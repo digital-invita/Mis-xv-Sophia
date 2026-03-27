@@ -203,20 +203,22 @@ font-family: 'Playfair Display', serif;
 
 .bg-fixed {
   position: fixed;
-  inset: 0; /* 🔥 top, left, right, bottom = 0 */
-
-  background:
-    linear-gradient(
-      rgba(5,15,31,0.75),
-      rgba(5,15,31,0.85)
-    ),
-    url("fondo.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  inset: 0;
+  background: url("fondo.png") center / cover no-repeat;
   z-index: 0;
+}
+
+.bg-fixed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(5,15,31,0.6),
+    rgba(5,15,31,0.7)
+  );
+
+  mix-blend-mode: multiply; /* 🔥 clave */
 }
   
 /* ================================
