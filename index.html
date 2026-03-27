@@ -119,7 +119,7 @@ body {
   gap: 20px;
 
   transition: opacity .8s ease;
- 
+  pointer-events: auto; 
 }
 
 #overlay .intro-text {
@@ -2782,7 +2782,8 @@ openBtn.addEventListener("click", () => {
   }, 800);
 
 });
-
+console.log("botón:", openBtn);
+  });
   // Mostrar botón música
   musicBtn.classList.add("show");
 
