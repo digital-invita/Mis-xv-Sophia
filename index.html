@@ -204,13 +204,22 @@ font-family: 'Playfair Display', serif;
 .bg-fixed {
   position: fixed;
   inset: 0;
-
-  background: url("fondo.png") center / contain no-repeat;
-  background-color: #050f1f;
-
+  background: var(--bg-color);
   z-index: 0;
 }
 
+/* PNG separado */
+.bg-fixed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("fondo.png") center / contain no-repeat;
+
+  opacity: 0.6; /* 🔥 AQUÍ controlas transparencia */
+}
+
+/* overlay opcional */
 .bg-fixed::after {
   content: "";
   position: absolute;
