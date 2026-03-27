@@ -305,18 +305,13 @@ font-family: 'Playfair Display', serif;
 
 /* SECCIONES */
 .section {
-  opacity: 0;
-  transform: translateY(60px) scale(.96);
-  filter: blur(6px);
+  position: relative;
+  z-index: 2;
 
-  transition: all 1s cubic-bezier(.19,1,.22,1);
-}
+  max-width: 320px;
+  margin: 0 auto;
 
-.section.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
-}
+  padding: 34px 22px 22px;
 
   /* GLASS · usando tus valores (ajuste fino) */
  background: linear-gradient(
@@ -369,27 +364,15 @@ backdrop-filter: blur(18px);
   opacity: 1;
   transform: none;
 }
-/* estado inicial */
-.section h2,
-.section p,
-.section .btn {
-  opacity: 0;
-  transform: translateY(20px);
+.section h2{
+  font-size: var(--size-title);
+  margin-bottom: 12px;
+  color: var(--color-title);
 }
-
-/* cuando aparece */
-.section.show h2,
-.section.show p,
-.section.show .btn {
-  opacity: 1;
-  transform: translateY(0);
+.section p{
+  font-size: var(--size-text);
+  color: var(--color-text);
 }
-
-/* delays elegantes */
-.section.show h2 { transition: all .6s ease .2s; }
-.section.show p { transition: all .6s ease .4s; }
-.section.show .btn { transition: all .6s ease .6s; }
-  
 /* SEPARADORES CORREGIDOS */
 .sep {
   height: 3px;
@@ -1633,35 +1616,15 @@ body.locked {
   box-shadow: 0 0 14px rgba(212,175,55,.4);
 }
 
+/* ITEM */
 .timeline-item {
   position: relative;
   margin-bottom: 45px;
 
   opacity: 0;
-  transform: translateY(40px) scale(.96);
-  filter: blur(6px);
-
+  transform: translateY(40px);
   transition: all 1s cubic-bezier(.19,1,.22,1);
 }
-
-.timeline-item.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
-
-  animation: itemFloat 4s ease-in-out infinite;
-}
-
-@keyframes itemFloat {
-  0%   { transform: translateY(0) scale(1); }
-  50%  { transform: translateY(-3px) scale(1); }
-  100% { transform: translateY(0) scale(1); }
-}
-
-.timeline-item:nth-child(1) { transition-delay: .2s; }
-.timeline-item:nth-child(2) { transition-delay: .4s; }
-.timeline-item:nth-child(3) { transition-delay: .6s; }
-.timeline-item:nth-child(4) { transition-delay: .8s; }
 
 /* PUNTO */
 .timeline-item::before {
@@ -2077,6 +2040,15 @@ con mi familia por guiarme siempre con amor, y con ustedes por acompañarme en e
 
    <div class="sep"></div>
   
+
+  
+<section class="section" id="countdown-section">
+  <h2>Faltan pocos días para este gran día</h2>
+  <div id="countdown"></div>
+</section>
+<div class="sep"></div>
+  
+
 
  <section class="section">
   <h2>Dress Code</h2>
@@ -2816,6 +2788,7 @@ const observer = new IntersectionObserver(entries=>{
 },{threshold:.3});
 
 items.forEach(el=>observer.observe(el));
+
 
 
 // OBSERVAR TIMELINE
