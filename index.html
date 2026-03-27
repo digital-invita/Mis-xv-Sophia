@@ -119,6 +119,7 @@ body {
   gap: 20px;
 
   transition: opacity .8s ease;
+  pointer-events: none;
 }
 
 #overlay .intro-text {
@@ -128,10 +129,20 @@ body {
 
 /* Base de las mariposas */
 .mariposa {
-  position: fixed; /* importante para que recorran toda la pantalla */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 70px;
   pointer-events: none;
   z-index: 10000;
+
+  opacity: 0; 
+  transition: opacity 1s ease;
+}
+
+
+body:not(.locked) .mariposa {
+  opacity: 1;
 }
 
 /* Mariposa 1 */
@@ -2763,10 +2774,14 @@ openBtn.addEventListener("click", () => {
 
   overlay.style.opacity = "0";
 
+  // 🔥 QUITAR BLOQUEO INMEDIATO
+  document.body.classList.remove("locked");
+
   setTimeout(() => {
     overlay.style.display = "none";
-    document.body.classList.remove("locked");
   }, 800);
+
+});
 
   // Mostrar botón música
   musicBtn.classList.add("show");
