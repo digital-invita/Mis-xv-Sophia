@@ -220,6 +220,31 @@ font-family: 'Playfair Display', serif;
   white-space: nowrap;
 }
 
+ .nombre2 {
+  position: relative;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(64px, 8.5vw, 120px);
+  letter-spacing: 8px;
+  display: inline-block;
+  z-index: 2;
+  
+  font-kerning: none;
+  text-rendering: optimizeSpeed;
+  
+   min-width: max-content;
+  
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.35),
+    0 12px 40px rgba(0,0,0,.45);
+
+  opacity: 0;
+  transform: translateY(80px) scale(.75);
+  filter: blur(14px);
+  will-change: transform, opacity, filter;
+  white-space: nowrap;
+} 
 
 /* REVELADO LUJO */
 @keyframes nombreLuxuryReveal {
@@ -1958,15 +1983,15 @@ con mi familia por guiarme siempre con amor, y con ustedes por acompañarme en e
 <div class="sep"></div>
 
 <section class="section">
-<div class="fecha-xv"
  <h2 style="font-family: 'Playfair Display', serif;">
   En compañía de mi madre
 </h2>
-</div>
+
+    <div class="nombre" id="nombre" data-text="Ileana Marcela >Cota Contreras">
+      Ileana Marcela<br>Cota Contreras
+    </div>
   
-<p style="font-family:'Tangerine', cursive; font-size:3rem; letter-spacing:1px; line-height:1.1;">
-  Ileana Marcela<br>Cota Contreras
-</p>
+
 
   
   <p> Tenemos el honor de invitarles a celebrar mis XV años</p>
