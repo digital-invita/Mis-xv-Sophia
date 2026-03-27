@@ -131,7 +131,7 @@ body {
   position: fixed; /* importante para que recorran toda la pantalla */
   width: 70px;
   pointer-events: none;
-  z-index: 999;
+  z-index: 10000;
 }
 
 /* Mariposa 1 */
@@ -1943,23 +1943,47 @@ Sophia
 </section>  
 <div class="sep"></div>
 
-<lottie-player 
-  class="mariposa m1"
-  src="https://assets.lottiefiles.com/packages/lf20_xlmz9xwm.json"
-  background="transparent"
-  speed="1"
-  loop
-  autoplay>
-</lottie-player>
+<svg class="mariposa m1" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="goldGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff6d5"/>
+      <stop offset="25%" stop-color="#f7d774"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="75%" stop-color="#b8962e"/>
+      <stop offset="100%" stop-color="#fff6d5"/>
+    </linearGradient>
+  </defs>
 
-<lottie-player 
-  class="mariposa m2"
-  src="https://assets.lottiefiles.com/packages/lf20_xlmz9xwm.json"
-  background="transparent"
-  speed="1"
-  loop
-  autoplay>
-</lottie-player>
+  <path d="M100 90 C40 20, 10 100, 90 110 C70 90, 70 70, 100 90Z" fill="url(#goldGradient1)"/>
+  <path d="M100 90 C160 20, 190 100, 110 110 C130 90, 130 70, 100 90Z" fill="url(#goldGradient1)"/>
+  <path d="M100 100 C40 130, 60 190, 100 140 C85 140, 85 120, 100 100Z" fill="url(#goldGradient1)"/>
+  <path d="M100 100 C160 130, 140 190, 100 140 C115 140, 115 120, 100 100Z" fill="url(#goldGradient1)"/>
+
+  <line x1="100" y1="80" x2="100" y2="140" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+  <path d="M100 80 Q90 60 80 70" stroke="#d4af37" stroke-width="2" fill="none"/>
+  <path d="M100 80 Q110 60 120 70" stroke="#d4af37" stroke-width="2" fill="none"/>
+</svg>
+
+<svg class="mariposa m2" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="goldGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff6d5"/>
+      <stop offset="25%" stop-color="#f7d774"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="75%" stop-color="#b8962e"/>
+      <stop offset="100%" stop-color="#fff6d5"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M100 90 C40 20, 10 100, 90 110 C70 90, 70 70, 100 90Z" fill="url(#goldGradient2)"/>
+  <path d="M100 90 C160 20, 190 100, 110 110 C130 90, 130 70, 100 90Z" fill="url(#goldGradient2)"/>
+  <path d="M100 100 C40 130, 60 190, 100 140 C85 140, 85 120, 100 100Z" fill="url(#goldGradient2)"/>
+  <path d="M100 100 C160 130, 140 190, 100 140 C115 140, 115 120, 100 100Z" fill="url(#goldGradient2)"/>
+
+  <line x1="100" y1="80" x2="100" y2="140" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+  <path d="M100 80 Q90 60 80 70" stroke="#d4af37" stroke-width="2" fill="none"/>
+  <path d="M100 80 Q110 60 120 70" stroke="#d4af37" stroke-width="2" fill="none"/>
+</svg>  
   
 <section class="section">
 
