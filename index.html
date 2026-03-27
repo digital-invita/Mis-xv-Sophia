@@ -305,18 +305,13 @@ font-family: 'Playfair Display', serif;
 
 /* SECCIONES */
 .section {
-  opacity: 0;
-  transform: translateY(60px) scale(.96);
-  filter: blur(6px);
+  position: relative;
+  z-index: 2;
 
-  transition: all 0.9s cubic-bezier(.19,1,.22,1);
-}
+  max-width: 320px;
+  margin: 0 auto;
 
-.section.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
-}
+  padding: 34px 22px 22px;
 
   /* GLASS · usando tus valores (ajuste fino) */
  background: linear-gradient(
@@ -2803,16 +2798,26 @@ const timelineObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
 
     if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+
+      const index = Array.from(timelineItems).indexOf(entry.target);
+
+      setTimeout(() => {
+        entry.target.classList.add("show");
+      }, index * 350); // delay más elegante
+
+      timelineObserver.unobserve(entry.target);
     }
 
   });
 }, {
-  threshold: 0.25,
-  rootMargin: "0px 0px -80px 0px"
+  threshold: 0.85,
+rootMargin: "0px 0px -150px 0px"
 });
 
 timelineItems.forEach(item => timelineObserver.observe(item));
+  
+});
+
 </script>
 </div>
 </body>
