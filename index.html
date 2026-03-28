@@ -2691,9 +2691,6 @@ END:VCALENDAR`;
   const select = document.getElementById("guestCount");
   
 
-  // Limpiar opciones excepto el placeholder
-  select.innerHTML = '<option value="">Selecciona una opción</option>';
-
   for (let i = 0; i < maxPases; i++) {
     let texto;
     if (i === 0) {
