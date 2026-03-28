@@ -2687,7 +2687,9 @@ END:VCALENDAR`;
   }
 }
 
- 
+  function actualizarOpciones() {
+  const select = document.getElementById("guestCount");
+  const maxPases = parseInt(select.dataset.pases) || 1;
 
   // Limpiar opciones excepto el placeholder
   select.innerHTML = '<option value="">Selecciona una opción</option>';
@@ -2722,7 +2724,10 @@ actualizarOpciones();
 
   if (attending) {
 
-
+    if (!count) {
+      alert("Selecciona cuántas personas asistirán ✨");
+      return;
+    }
 
     message = `✨ Confirmación de asistencia ✨
 
