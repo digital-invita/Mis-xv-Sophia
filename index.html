@@ -2691,22 +2691,8 @@ END:VCALENDAR`;
   const select = document.getElementById("guestCount");
   
 
-  for (let i = 0; i < maxPases; i++) {
-    let texto;
-    if (i === 0) {
-      texto = "Asistiré solo";
-    } else {
-      texto = `Me acompaña${i > 1 ? 'n' : ''} ${i} persona${i > 1 ? 's' : ''}`;
-    }
-    const option = document.createElement("option");
-    option.value = texto;
-    option.textContent = texto;
-    select.appendChild(option);
-  }
-}
-
 // Ejecutar al cargar la página
-actualizarOpciones();
+
  
    function sendConfirmation(attending) {
 
