@@ -2108,14 +2108,9 @@ con mi familia por guiarme siempre con amor, y con ustedes por acompañarme en e
     <div class="timeline-item">
       <div class="timeline-time"></div>
       <div class="timeline-title">Vals</div>
-      <div class="timeline-desc">¡A bailar!</div>
-    </div>
-
-   <div class="timeline-item">
-      <div class="timeline-time"></div>
-      <div class="timeline-title">Baile</div>
       <div class="timeline-desc">Presentación de Sophia</div>
     </div>
+
 
 
   </div>
@@ -2689,15 +2684,33 @@ END:VCALENDAR`;
 
   function actualizarOpciones() {
   const select = document.getElementById("guestCount");
-  
+  const maxPases = parseInt(select.dataset.pases) || 1;
+
+  // Limpiar opciones excepto el placeholder
+  select.innerHTML = '<option value="">Selecciona una opción</option>';
+
+  for (let i = 0; i < maxPases; i++) {
+    let texto;
+    if (i === 0) {
+      texto = "Asistiré solo";
+    } else {
+      texto = `Me acompaña${i > 1 ? 'n' : ''} ${i} persona${i > 1 ? 's' : ''}`;
+    }
+    const option = document.createElement("option");
+    option.value = texto;
+    option.textContent = texto;
+    select.appendChild(option);
+  }
+}
 
 // Ejecutar al cargar la página
-
+actualizarOpciones();
  
    function sendConfirmation(attending) {
 
   const name = document.getElementById("guestName").value.trim();
-  
+  const count = document.getElementById("guestCount").value;
+
   if (!name) {
     alert("Por favor escribe tu nombre ✨");
     return;
@@ -2707,7 +2720,10 @@ END:VCALENDAR`;
 
   if (attending) {
 
-
+    if (!count) {
+      alert("Selecciona cuántas personas asistirán ✨");
+      return;
+    }
 
     message = `✨ Confirmación de asistencia ✨
 
